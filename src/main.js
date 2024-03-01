@@ -1,4 +1,8 @@
 import { getImages } from './js/render-functions';
+// Описаний у документації
+import iziToast from 'izitoast';
+// Додатковий імпорт стилів
+import 'izitoast/dist/css/iziToast.min.css';
 
 const form = document.querySelector('.form');
 const input = document.querySelector('input[name=message]');
@@ -9,17 +13,16 @@ const KEY = '42476589-1f9c9241784e75b96bc1ad3a5';
 export let url = 'https://pixabay.com/api/';
 let currentUrl = `${url}?key=${KEY}&`;
 
-const request = {
+export const request = {
   q: '',
   image_type: 'photo',
   orientation: 'horizontal',
   safesearch: true,
-  per_page: 15,
+  per_page: 150,
 };
 
-let page;
+export let page;
 let searchParam;
-// let totalPage = 0;
 
 form.addEventListener('submit', event => {
   event.preventDefault();
