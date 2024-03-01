@@ -14,7 +14,7 @@ export const request = {
   image_type: 'photo',
   orientation: 'horizontal',
   safesearch: true,
-  per_page: 150,
+  per_page: 15,
 };
 
 export let page;
