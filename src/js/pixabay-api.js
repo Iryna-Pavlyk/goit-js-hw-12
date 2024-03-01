@@ -41,7 +41,6 @@ export function createMarkup(data) {
     .join('');
 
   loadMoreBtn.classList.remove('is-hidden');
-  loader.classList.add('is-hidden');
 
   return gallery.insertAdjacentHTML('beforeend', markup);
 }

@@ -1,5 +1,5 @@
 import octagon from '../img/octagon.png';
-import { gallery, request, page } from '../main';
+import { gallery, request, page, loadMoreBtn, loader } from '../main';
 import { createMarkup } from '../js/pixabay-api';
 // Описаний у документації
 import iziToast from 'izitoast';
@@ -42,8 +42,7 @@ export async function getImages(link) {
         return;
       }
       totalPages = Math.ceil(data.totalHits / request.per_page);
-      if (data.hits.length < request.per_page || page === totalPages) {
-        loadMoreBtn.classList.add('is-hidden');
+      if (page === totalPages) {
         iziToast.info({
           message: 'Sorry, there are no images',
           messageColor: '#fafafb',
@@ -54,9 +53,7 @@ export async function getImages(link) {
           maxWidth: '432',
           position: 'topRight',
         });
-        if (data.hits.length <= request.per_page && data.hits.length > 0) {
-          createMarkup(data);
-        }
+        loadMoreBtn.classList.add('is-hidden');
         return;
       }
 
@@ -65,6 +62,9 @@ export async function getImages(link) {
     })
     .catch(error => {
       console.log(error);
+    })
+    .finally(() => {
+      loader.classList.add('is-hidden');
     });
 }
 
