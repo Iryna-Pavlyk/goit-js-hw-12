@@ -32,6 +32,7 @@ form.addEventListener('submit', event => {
   page = 1;
   searchParam = new URLSearchParams(request);
   currentUrl = `${currentUrl}${searchParam}&page=${page}`;
+  input.value = '';
   getImages(currentUrl);
 });
 

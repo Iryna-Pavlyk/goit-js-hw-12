@@ -11,8 +11,6 @@ import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 import axios from 'axios';
 
-// axios.defaults.baseURL = url;
-
 const select = {
   captionsData: 'alt',
   captionDelay: 250,
@@ -58,6 +56,14 @@ export async function getImages(link) {
       }
 
       createMarkup(data);
+
+      const scrollHight = gallery.getBoundingClientRect().height;
+
+      window.scrollBy({
+        top: scrollHight,
+        behavior: 'smooth',
+      });
+
       return lightbox.refresh();
     })
     .catch(error => {

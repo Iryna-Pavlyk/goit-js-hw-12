@@ -1,4 +1,4 @@
-import { gallery, loadMoreBtn, loader } from '../main';
+import { gallery, loadMoreBtn } from '../main';
 
 export function createMarkup(data) {
   let markup = data.hits
