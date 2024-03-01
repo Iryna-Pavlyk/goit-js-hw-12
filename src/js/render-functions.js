@@ -25,6 +25,7 @@ export async function getImages(link) {
     .then(({ data }) => {
       if (data.hits.length === 0) {
         input.value = '';
+
         iziToast.error({
           message:
             'Sorry, there are no images matching your search query. Please try again!',
@@ -38,10 +39,13 @@ export async function getImages(link) {
           maxWidth: '432',
           position: 'topRight',
         });
+
         gallery.innerHTML = '';
         return;
       }
+
       totalPages = Math.ceil(data.totalHits / request.per_page);
+
       if (page === totalPages) {
         iziToast.info({
           message: 'Sorry, there are no images',
