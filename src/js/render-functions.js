@@ -25,6 +25,7 @@ export async function getImages(link) {
     .then(({ data }) => {
       if (data.hits.length === 0) {
         input.value = '';
+        loadMoreBtn.classList.add('is-hidden');
 
         iziToast.error({
           message:
