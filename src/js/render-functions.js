@@ -15,6 +15,7 @@ const select = {
   captionsData: 'alt',
   captionDelay: 250,
 };
+
 const lightbox = new SimpleLightbox('.image-gallery a', select);
 let totalPages = 0;
 
@@ -52,6 +53,7 @@ export async function getImages(link) {
           maxWidth: '432',
           position: 'topRight',
         });
+
         loadMoreBtn.classList.add('is-hidden');
         return;
       }
