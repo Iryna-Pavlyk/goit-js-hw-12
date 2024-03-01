@@ -1,5 +1,5 @@
 import octagon from '../img/octagon.png';
-import { gallery, request, page, loadMoreBtn, loader } from '../main';
+import { gallery, request, page, loadMoreBtn, loader, input } from '../main';
 import { createMarkup } from '../js/pixabay-api';
 // Описаний у документації
 import iziToast from 'izitoast';
@@ -23,6 +23,7 @@ export async function getImages(link) {
     .get(link)
     .then(({ data }) => {
       if (data.hits.length === 0) {
+        input.value = '';
         iziToast.error({
           message:
             'Sorry, there are no images matching your search query. Please try again!',

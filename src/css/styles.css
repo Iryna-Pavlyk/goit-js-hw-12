@@ -170,4 +170,15 @@ button:hover {
   display: none;
 }
 
+.load-btn {
+  margin-top: 32px;
+  font-size: 15px;
+  width: 125px;
+}
+
 /* ================== /Load More Button */
+
+.gallery-section {
+  text-align: center;
+  margin-top: 32px;
+}

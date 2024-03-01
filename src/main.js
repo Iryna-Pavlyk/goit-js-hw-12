@@ -1,11 +1,7 @@
 import { getImages } from './js/render-functions';
-// Описаний у документації
-import iziToast from 'izitoast';
-// Додатковий імпорт стилів
-import 'izitoast/dist/css/iziToast.min.css';
 
 const form = document.querySelector('.form');
-const input = document.querySelector('input[name=message]');
+export const input = document.querySelector('input[name=message]');
 export const gallery = document.querySelector('.image-gallery');
 export const loadMoreBtn = document.querySelector('.load-btn');
 export const loader = document.querySelector('.loader');
@@ -32,7 +28,6 @@ form.addEventListener('submit', event => {
   page = 1;
   searchParam = new URLSearchParams(request);
   currentUrl = `${currentUrl}${searchParam}&page=${page}`;
-  input.value = '';
   getImages(currentUrl);
 });
 
