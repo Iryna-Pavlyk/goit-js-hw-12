@@ -22,6 +22,7 @@ form.addEventListener('submit', event => {
   event.preventDefault();
   gallery.innerHTML = null;
   loader.classList.remove('is-hidden');
+  loadMoreBtn.classList.add('is-hidden');
   inputValue = input.value;
   page = 1;
   currentUrl = `${currentUrl}&q=${input.value}&page=${page}`;
