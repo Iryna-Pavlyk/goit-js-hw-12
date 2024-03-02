@@ -14,9 +14,9 @@ export const request = new URLSearchParams({
   per_page: 15,
 });
 
-let currentUrl = `https://pixabay.com/api/?key=${KEY}&${request}`;
 export let page;
 let inputValue;
+let currentUrl = `https://pixabay.com/api/?key=${KEY}&${request}`;
 
 form.addEventListener('submit', event => {
   event.preventDefault();
