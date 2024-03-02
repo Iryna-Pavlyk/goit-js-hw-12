@@ -6,7 +6,7 @@ export const gallery = document.querySelector('.image-gallery');
 export const loadMoreBtn = document.querySelector('.load-btn');
 export const loader = document.querySelector('.loader');
 const KEY = '42476589-1f9c9241784e75b96bc1ad3a5';
-export let url = 'https://pixabay.com/api/';
+const url = 'https://pixabay.com/api/';
 let currentUrl = `${url}?key=${KEY}`;
 
 export const request = {
