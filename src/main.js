@@ -16,7 +16,7 @@ export const request = new URLSearchParams({
 
 export let page;
 let inputValue;
-let currentUrl = `https://pixabay.com/api/?key=${KEY}&${request}`;
+let currentUrl;
 
 form.addEventListener('submit', event => {
   event.preventDefault();
@@ -25,12 +25,12 @@ form.addEventListener('submit', event => {
   loadMoreBtn.classList.add('is-hidden');
   inputValue = input.value;
   page = 1;
-  currentUrl = `${currentUrl}&q=${input.value}&page=${page}`;
+  currentUrl = `https://pixabay.com/api/?key=${KEY}&q=${input.value}&${request}&page=${page}`;
   getImages(currentUrl);
 });
 
 loadMoreBtn.addEventListener('click', () => {
   page += 1;
-  currentUrl = `${currentUrl}&q=${inputValue}&page=${page}`;
+  currentUrl = `https://pixabay.com/api/?key=${KEY}&q=${inputValue}&${request}&page=${page}`;
   getImages(currentUrl);
 });
