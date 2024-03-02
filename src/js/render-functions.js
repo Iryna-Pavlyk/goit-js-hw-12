@@ -24,8 +24,6 @@ export async function getImages(link) {
     .get(link)
     .then(({ data }) => {
       if (data.hits.length === 0) {
-        input.value = '';
-
         iziToast.error({
           message:
             'Sorry, there are no images matching your search query. Please try again!',
@@ -78,5 +76,6 @@ export async function getImages(link) {
     })
     .finally(() => {
       loader.classList.add('is-hidden');
+      input.value = '';
     });
 }
